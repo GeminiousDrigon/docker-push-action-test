@@ -97,6 +97,7 @@ jobs:
           context: .
           push: true
           no-cache: true
+          file: '{context}/Dockerfile.test'
           tags: geminiousdrigon/first-docker-push-action-test-no-cache-front:1.0.01
 
 
