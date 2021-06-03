@@ -34,4 +34,9 @@ jobs:
       - name: Install packages
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
+      - name: Check Dependency
+        run: |
+          cd node_modules
+          ls
+        
 
