@@ -60,7 +60,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          push: false
+          push: true
           tags: geminiousdrigon/first-docker-push-action-test-front:test
           cache-from: type=local,src=/tmp/.buildx-docker-push-action-test-cache
           cache-to: type=local,dest=/tmp/.buildx-docker-push-action-test-cache-new
@@ -95,7 +95,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          push: false
+          push: true
           no-cache: true
           file: 'Dockerfile.test'
           tags: geminiousdrigon/first-docker-push-action-test-no-cache-front:1.0.01
