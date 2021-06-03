@@ -61,22 +61,26 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
-        name: Build and push
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: false
-          tags: geminiousdrigon/first-docker-push-action-test-front:test
-          cache-from: type=local,src=/tmp/.buildx-docker-push-action-test-cache
-          cache-to: type=local,dest=/tmp/.buildx-docker-push-action-test-cache-new
-      -
-        # Temp fix
-        # https://github.com/docker/build-push-action/issues/252
-        # https://github.com/moby/buildkit/issues/1896
-        name: Move cache
+        name: Test
         run: |
-          rm -rf /tmp/.buildx-docker-push-action-test-cache
-          mv /tmp/.buildx-docker-push-action-test-cache-new /tmp/.buildx-docker-push-action-test-cache
+          ls
+#       -
+#         name: Build and push
+#         uses: docker/build-push-action@v2
+#         with:
+#           context: .
+#           push: false
+#           tags: geminiousdrigon/first-docker-push-action-test-front:test
+#           cache-from: type=local,src=/tmp/.buildx-docker-push-action-test-cache
+#           cache-to: type=local,dest=/tmp/.buildx-docker-push-action-test-cache-new
+#       -
+#         # Temp fix
+#         # https://github.com/docker/build-push-action/issues/252
+#         # https://github.com/moby/buildkit/issues/1896
+#         name: Move cache
+#         run: |
+#           rm -rf /tmp/.buildx-docker-push-action-test-cache
+#           mv /tmp/.buildx-docker-push-action-test-cache-new /tmp/.buildx-docker-push-action-test-cache
 
 
 
