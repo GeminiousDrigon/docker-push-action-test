@@ -33,7 +33,6 @@
 		"nprogress": "^0.2.0",
 		"numeral": "^2.0.6",
 		"parse-url": "^5.0.2",
-		"qs": "^6.9.4",
 		"querystring": "^0.2.0",
 		"react-big-calendar": "^0.30.0",
 		"react-color": "^2.19.3",
