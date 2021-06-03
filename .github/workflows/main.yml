@@ -23,12 +23,14 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v2
-      - name: Regtrieving Cache
+        
+      - name: Retrieving Cache
         uses: actions/cache@v2
         id: cache
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          
       - name: Install packages
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
